@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-nodemailer-example",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^5.1.1"
+  }
+}

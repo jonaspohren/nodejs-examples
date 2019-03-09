@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-mongoose-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "mongoose": "^5.4.7"
+  }
+}
