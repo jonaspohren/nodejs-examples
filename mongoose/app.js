@@ -41,7 +41,7 @@ mongoose.set('useNewUrlParser', true);
   console.log(name);
 
   //const blogPosts = await BlogPost.find({ $text: { $search: 'Hello' } }) //db.blogposts.createIndex({ title: 'text' })
-  const blogPosts = await BlogPost.find({ title: { $regex: /el/i } }).sort({ title: 'desc' });
+  const blogPosts = await BlogPost.find({ title: { $regex: /el/i } }, { content: 0 }).sort({ title: 'desc' });
 
   console.log(blogPosts);
 
