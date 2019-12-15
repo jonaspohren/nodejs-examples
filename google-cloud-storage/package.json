@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-google-cloud-storage-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env GOOGLE_APPLICATION_CREDENTIALS=/path/to/keyfile.json node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^2.3.1",
+    "axios": "^0.18.0",
+    "bluebird": "^3.7.2",
+    "cross-env": "^5.2.0",
+    "uuid": "^3.3.2"
+  }
+}
