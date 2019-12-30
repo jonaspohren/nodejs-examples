@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-winston-cloudwatch-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "winston": "^3.2.1",
+    "winston-cloudwatch": "^2.3.0"
+  }
+}
