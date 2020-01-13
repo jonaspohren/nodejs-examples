@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-rabbitmq-example",
+  "license": "MIT",
+  "scripts": {
+    "send": "node ./src/send.js",
+    "receive": "node ./src/receive.js",
+    "publish": "node ./src/publish.js",
+    "subscribe": "node ./src/subscribe.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "dotenv": "^8.2.0"
+  }
+}
