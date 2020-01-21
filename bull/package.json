@@ -2,7 +2,7 @@
   "name": "nodejs-bull-example",
   "license": "MIT",
   "scripts": {
-    "worker": "node -r dotenv/config ./src/worker.js",
+    "worker": "node ./src/worker.js",
     "producer": "node ./src/producer.js"
   },
   "dependencies": {
