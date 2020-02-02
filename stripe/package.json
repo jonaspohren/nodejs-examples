@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-stripe-example",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "stripe": "^8.7.0"
+  }
+}

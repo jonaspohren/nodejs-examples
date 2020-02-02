@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <form id="payment-form">
+      <div id="card-element"></div>
+      <button id="submit-payment" type="submit">Submit</button>
+    </form>
+    <script>
+      const stripe = Stripe('<%= api_key %>')
+      const elements = stripe.elements()
+      const card = elements.create('card', { style: { base: { color: '#32325d' } } })
+
+      card.mount('#card-element')
+
+      const form = document.getElementById('payment-form')
+
+      form.addEventListener('submit', event => {
+        event.preventDefault()
+
+        stripe.confirmCardPayment('<%= client_secret %>', {
+          payment_method: {
+            card,
+            billing_details: {}
+          }
+        }).then(result => {
+          if (result.error) {
+            alert(result.error.message)
+          } else {
+            if (result.paymentIntent.status === 'succeeded') {
+              alert('success')
+            }
+          }
+        })
+      })
+    </script>
+    <style>
+      #payment-form {
+        width: 300px;
+        margin: 0 auto;
+      }
+      #card-element {
+        margin-top: 25px;
+      }
+      #submit-payment {
+        width: 100%;
+        margin-top: 10px;
+      }
+    </style>
+  </body>
+</html>
