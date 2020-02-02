@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-mongoose-redis-example",
+  "version": "1.0.0",
+  "author": "Jonas Pohren <jonaspohren@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "mongoose": "^5.4.17",
+    "redis": "^2.8.0"
+  }
+}
