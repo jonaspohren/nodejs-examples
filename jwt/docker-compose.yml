@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    build: .
+    environment:
+      - MONGODB_URI=mongodb://mongodb-server:27017/jwt_db
+    ports:
+      - '3000:3000'
+    depends_on:
+      - 'mongodb-server'
+  mongodb-server:
+    image: 'mongo:4'
+    ports:
+      - '27017:27017'

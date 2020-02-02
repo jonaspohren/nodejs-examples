@@ -1,0 +1,6 @@
+*
+!src/
+!config.js
+!package.json
+!server.js
+!yarn.lock
