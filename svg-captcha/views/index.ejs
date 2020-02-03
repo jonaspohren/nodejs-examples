@@ -1,0 +1,10 @@
+<html>
+  <body>
+    <form method="POST" action="/captcha">
+      <%- captcha %>
+      <input type="text" name="answer">
+      <button type="submit">Submit</button>
+    </form>
+    <span><%= message %></span>
+  </body>
+</html>

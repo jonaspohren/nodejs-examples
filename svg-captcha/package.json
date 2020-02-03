@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-svg-captcha-example",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run open",
+    "open": "concurrently \"node server.js\" \"start http://localhost:3000\""
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "svg-captcha": "^1.4.0"
+  }
+}
