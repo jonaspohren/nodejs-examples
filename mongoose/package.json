@@ -6,6 +6,6 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "mongoose": "^5.4.7"
+    "mongoose": "^5.7.5"
   }
 }
