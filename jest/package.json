@@ -2,9 +2,6 @@
   "name": "nodejs-jest-example",
   "version": "1.0.0",
   "license": "MIT",
-  "jest": {
-    "setupFilesAfterEnv": ["./test/jest.setup.js"]
-  },
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "test:coverage": "cross-env NODE_ENV=test jest --coverage"

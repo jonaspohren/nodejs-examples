@@ -1,17 +1,24 @@
-const { capitalize } = require('../src/utils')
+const utils = require('../src/utils')
 
 describe('My Tests', () => {
-  beforeEach(() => {
-    console.log('Before')
+  test('First Test', () => {
+    const capitalizeMock = jest.spyOn(utils, 'capitalize').mockReturnValue('John')
+
+    const formattedName = utils.formatName('john')
+
+    expect(capitalizeMock).toHaveBeenCalled()
+    expect(formattedName).toEqual('Name: John')
+
+    // capitalizeMock.mockRestore()
   })
 
-  test('First Test', () => {
-    const result = capitalize('jonas')
+  test('Second Test', () => {
+    const capitalize = utils.capitalize('jonas')
 
-    expect(result).toBe('Jonas')
+    expect(capitalize).toEqual('Jonas')
   })
 
   afterEach(() => {
-    console.log('After')
+    jest.restoreAllMocks()
   })
 })
