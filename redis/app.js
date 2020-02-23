@@ -3,7 +3,13 @@ const bluebird = require('bluebird');
 
 bluebird.promisifyAll(redis.RedisClient.prototype);
 
-const client = redis.createClient();
+const client = redis.createClient({
+  enable_offline_queue: false,
+  retry_strategy: (options) => {
+    console.log(options);
+    return 5000;
+  }
+});
 
 (async () => {
   await client.setAsync('0', 'Hello World!', 'EX', 5);
