@@ -1,7 +1,7 @@
 const amqp = require('amqplib')
 const config = require('./config')
 
-;(async () => {
+async function init() {
   const connection = await amqp.connect(config.rabbitmq.url)
 
   const e = config.rabbitmq.exchange
@@ -14,4 +14,6 @@ const config = require('./config')
   setTimeout(async () => {
     await connection.close()
   }, 500)
-})()
+}
+
+init()

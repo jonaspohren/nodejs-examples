@@ -1,7 +1,7 @@
 const amqp = require('amqplib')
 const config = require('./config')
 
-;(async () => {
+async function init() {
   const connection = await amqp.connect(config.rabbitmq.url)
 
   const e = config.rabbitmq.exchange
@@ -13,8 +13,10 @@ const config = require('./config')
 
   await channel.bindQueue(q.queue, e, '')
 
-  await channel.consume(q.queue, (msg) => {
+  channel.consume(q.queue, (msg) => {
     console.log(msg.content.toString())
     channel.ack(msg)
   })
-})()
+}
+
+init()
