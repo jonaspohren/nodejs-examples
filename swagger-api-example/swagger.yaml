@@ -1,0 +1,62 @@
+swagger: '2.0'
+info:
+  description: Swagger API example
+  version: 1.0.0
+  title: Swagger API example
+host: localhost:3000
+basePath: /
+schemas:
+- http
+
+paths:
+  /user/{id}:
+    get:
+      summary: get an user by id
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        description: user id
+        schema:
+          type: integer
+        required: true
+      responses:
+        200:
+          description: user JSON object
+          schema:
+            $ref: '#/definitions/User'
+  /user:
+    post:
+      summary: creates a new user
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: user
+        description: user to add
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              example: John
+              required: true
+      responses:
+        200:
+          description: user JSON object
+          schema:
+            $ref: '#/definitions/User'
+
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      name:
+        type: string
+        example: John Smith
