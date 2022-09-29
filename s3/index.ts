@@ -1,4 +1,8 @@
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import {
+  S3Client,
+  GetObjectCommand,
+  PutObjectCommand,
+} from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { createPresignedPost } from "@aws-sdk/s3-presigned-post";
 import { writeFile, readFile } from "fs/promises";
@@ -52,6 +56,16 @@ const GetObject = async (key: string): Promise<Buffer> => {
   });
 };
 
+const PutObject = async (key: string, body: Buffer) => {
+  const command = new PutObjectCommand({
+    Bucket: bucketName,
+    Key: key,
+    Body: body,
+  });
+
+  return s3Client.send(command);
+};
+
 /* CreatePresignedPost("<KEY>")
   .then(async ({ url, fields }) => {
     const formData = new FormData();
@@ -78,6 +92,8 @@ const GetObject = async (key: string): Promise<Buffer> => {
   .then(async (buff) => {
     await writeFile("<FILE>", buff);
   })
-  .catch((err) => {
-    console.log(err);
-  }); */
+  .catch((err) => console.log(err)); */
+
+/* readFile("<FILE>")
+  .then((file) => PutObject("<KEY>", file))
+  .catch((err) => console.log(err)); */
