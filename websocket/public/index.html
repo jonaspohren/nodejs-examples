@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <div>
+      <div>
+        <textarea id="text" cols="30" rows="3"></textarea>
+        <div>
+          <button id="button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      window.addEventListener("load", () => {
+        const text = document.getElementById("text");
+        const button = document.getElementById("button");
+
+        const ws = new WebSocket("ws://localhost:3000");
+
+        ws.addEventListener("open", () => {
+          console.log(ws.readyState);
+        });
+
+        ws.addEventListener("close", () => {
+          console.log(ws.readyState);
+        });
+
+        ws.addEventListener("error", () => {
+          console.log("error");
+        });
+
+        ws.addEventListener("message", (event) => {
+          console.log(event.data);
+        });
+
+        button.addEventListener("click", () => {
+          ws.send(text.value);
+          text.value = "";
+        });
+      })
+    </script>
+  </body>
+</html>
