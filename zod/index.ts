@@ -45,3 +45,15 @@ try {
     console.log(err.errors);
   }
 }
+
+/* const parse = function <T extends z.ZodType<z.infer<T>>> (data: unknown, zodType: T) {
+  try {
+    return zodType.parse(data);
+  } catch (error) {
+    if (error instanceof ZodError) {
+      console.log(error.errors);
+    }
+  }
+}
+
+parse({}, z.object({})); */
