@@ -1,6 +1,6 @@
 # Node.js Puppeteer Example
 
 ```
-yarn install
+npm i
 npm start
 ```

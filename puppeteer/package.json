@@ -2,10 +2,25 @@
   "name": "nodejs-puppeteer-example",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "ts-node --esm index.mts"
   },
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^1.11.0"
+    "puppeteer": "^19.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": "18.15.0"
   }
 }
