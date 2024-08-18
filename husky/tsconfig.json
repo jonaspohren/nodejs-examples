@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "dist",
+    "module": "NodeNext",
+    "strict": true
+  },
+  "exclude": ["**/*.spec.ts"]
+}
