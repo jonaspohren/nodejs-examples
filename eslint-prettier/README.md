@@ -1,5 +1,5 @@
-# Prettier Node.js Example
+# ESLint/Prettier Node.js Example
 
 ```
-yarn install
+npm i
 ```
