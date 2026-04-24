@@ -4,7 +4,7 @@ import { UserModel } from '../models/user.model.ts';
 import * as userService from '../services/user.service.ts';
 
 export function getUsers(req: Request, res: Response) {
-  const users = userService.findUsers;
+  const users = userService.findUsers();
 
   res.status(200).json(users);
 }
